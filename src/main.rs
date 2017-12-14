@@ -196,7 +196,7 @@ fn main() {
 	use markov::Markov;
 
 
-	let mut markov = Markov::new(3);
+	let mut markov = Markov::new(2);
     markov.load_dir();
 
     println!("\nElements in map: {}:", markov.h.len());
