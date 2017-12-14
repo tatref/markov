@@ -1,2 +1,4 @@
 /target/
 **/*.rs.bk
+/feed/*
+!/feed/.put_feeds_here

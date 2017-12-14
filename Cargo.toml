@@ -5,3 +5,4 @@ authors = ["yann"]
 
 [dependencies]
 rand = "*"
+glob = "0.2"
