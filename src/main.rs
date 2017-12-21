@@ -1,5 +1,6 @@
 extern crate rand;
 extern crate glob;
+extern crate unicode_segmentation;
 
 
 #[allow(unused_variables)]
@@ -10,6 +11,7 @@ mod markov {
     use rand::distributions::{WeightedChoice,Weighted};
     use rand::{ThreadRng,thread_rng};
     use rand::distributions::IndependentSample;
+    use unicode_segmentation::UnicodeSegmentation;
 
 
 	#[derive(Eq,PartialEq,Hash,Clone,Debug)]
@@ -39,7 +41,7 @@ mod markov {
 
         fn get_tokens(phrase: &str) -> Vec<Token> {
             let mut words = phrase
-                .split_whitespace()
+                .unicode_words()
                 .map(|w| Token::Word(String::from(w)))
                 .collect::<Vec<_>>();
             words.insert(0, Token::Start);
